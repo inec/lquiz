@@ -5,6 +5,8 @@ import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 
+import {FormsModule} from '@angular/forms';
+
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.components';
 
@@ -14,6 +16,7 @@ import { QuestionComponent } from './question.components';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
     MatInputModule,
