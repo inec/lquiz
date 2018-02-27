@@ -3,8 +3,7 @@ import { QuestionComponent } from './question.components';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  template: '<question></question>'
 })
 export class AppComponent {
   title = 'inec-mapp';
