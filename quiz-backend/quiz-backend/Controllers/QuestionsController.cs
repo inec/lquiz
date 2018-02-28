@@ -33,6 +33,7 @@ namespace quiz_backend.Controllers
         {
             context.Questions.Add( new Models.Question() { Text="text1"}
             );
+            context.SaveChanges();
         }
     }
 }
