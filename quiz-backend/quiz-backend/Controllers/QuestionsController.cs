@@ -11,6 +11,11 @@ namespace quiz_backend.Controllers
     [Route("api/Questions")]
     public class QuestionsController : Controller
     {
+        readonly QuizContext context;
+        public QuestionsController(QuizContext context)
+        {
+            this.context = context;
+        }
 
         [HttpGet]
         public IEnumerable<Models.Question> Get()
@@ -26,6 +31,8 @@ namespace quiz_backend.Controllers
         [HttpPost]
         public void Post([FromBody]Models.Question question)
         {
+            context.Questions.Add( new Models.Question() { Text="text1"}
+            );
         }
     }
 }
