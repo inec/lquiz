@@ -8,6 +8,8 @@ import { ApiService } from './api.service';
 })
 export class QuestionComponent {
 
+    question={}
+    
     constructor(private api: ApiService){}
 
     post(question){
