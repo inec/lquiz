@@ -10,7 +10,7 @@ export class ApiService {
     }
     postQuestion(question){
         console.log(question+'-uuu')
-        this.http.post('',question).subscribe(res=>{
+        this.http.post('http://localhost:52980/api/questions',question).subscribe(res=>{
             console.log(res+'-e')
         }        )
      
