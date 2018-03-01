@@ -12,6 +12,7 @@ import {FormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.components';
 import { ApiService } from './api.service';
+import { QuestionsComponent } from './questions.component';
 
 @NgModule({
   declarations: [
