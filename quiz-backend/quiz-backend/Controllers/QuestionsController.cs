@@ -35,5 +35,10 @@ namespace quiz_backend.Controllers
             context.Questions.Add(question);
             context.SaveChanges();  
         }
+
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody]Models.Question question)
+        {
+        }
     }
 }
