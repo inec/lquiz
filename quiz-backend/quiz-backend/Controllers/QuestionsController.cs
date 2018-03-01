@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+
 namespace quiz_backend.Controllers
 {
     [Produces("application/json")]
@@ -29,11 +30,14 @@ namespace quiz_backend.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]Models.Question question)
+        public async Task<IAsyncResult> Post([FromBody]Models.Question question)
         {
             //context.Questions.Add( new Models.Question() { Text="text1"}            );
             context.Questions.Add(question);
-            context.SaveChanges();  
+            await context.SaveChangesAsync();
+
+            return Ok(question);
+
         }
 
         [HttpPut("{id}")]
