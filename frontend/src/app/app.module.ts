@@ -16,7 +16,7 @@ import { QuestionsComponent } from './questions.component';
 
 @NgModule({
   declarations: [
-    AppComponent,QuestionComponent
+    AppComponent,QuestionComponent,QuestionsComponent
   ],
   imports: [
     BrowserModule,
