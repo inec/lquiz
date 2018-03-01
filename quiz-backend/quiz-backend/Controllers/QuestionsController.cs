@@ -30,7 +30,7 @@ namespace quiz_backend.Controllers
         }
 
         [HttpPost]
-        public async Task<IAsyncResult> Post([FromBody]Models.Question question)
+        public async Task<IActionResult> Post([FromBody]Models.Question question)
         {
             //context.Questions.Add( new Models.Question() { Text="text1"}            );
             context.Questions.Add(question);
@@ -41,11 +41,14 @@ namespace quiz_backend.Controllers
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> Put(int id, [FromBody]Models.Question question)
+        public async Task<IActionResult> Put(int id, [FromBody]Models.Question questionData)
         {
-            var qestion = await context.Questions.SingleOrDefaultAsync(q=>q.ID ==id);
+            //var qestion = await context.Questions.SingleOrDefaultAsync(q=>q.ID ==id);
 
-            return Ok(question);
+            context.Entry(questionData).State = EntityState.Modified;
+
+            await context.SaveChangesAsync();
+            return Ok(questionData);
         }
     }
 }
