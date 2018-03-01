@@ -20,11 +20,11 @@ namespace quiz_backend.Controllers
         [HttpGet]
         public IEnumerable<Models.Question> Get()
         {
-            return new Models.Question[]
+            return context.Questions;
+            /*return new Models.Question[]
             {
-                new Models.Question(){ Text="hello"},
-                new Models.Question(){ Text="hi"}
-            };
+               new Models.Question(){ Text="hello"},                new Models.Question(){ Text="hi"}
+            };*/
                 //{ "value1", "value2" };
         }
 
