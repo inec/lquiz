@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-
+using Microsoft.EntityFrameworkCore;
 namespace quiz_backend.Controllers
 {
     [Produces("application/json")]
@@ -37,8 +37,11 @@ namespace quiz_backend.Controllers
         }
 
         [HttpPut("{id}")]
-        public void Put(int id, [FromBody]Models.Question question)
+        public async Task<IActionResult> Put(int id, [FromBody]Models.Question question)
         {
+            var qestion = await context.Questions.SingleOrDefaultAsync(q=>q.ID ==id);
+
+            return Ok(question);
         }
     }
 }
