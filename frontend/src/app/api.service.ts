@@ -6,6 +6,8 @@ import { Subject} from 'rxjs';
 export class ApiService {
 
     private selectedQuestion = new Subject<any>();
+    questionSelected=this.selectedQuestion.asObservable();
+
     constructor(private http: HttpClient){
 
     }
@@ -19,7 +21,7 @@ export class ApiService {
     postQuestion(question){
         console.log(question+'-uuu')
         this.http.post('http://localhost:52980/api/questions',question).subscribe(res=>{
-            console.log(res+'-e')
+            console.log(res+'-api.sevice.ts l22')
         }        )
      
 
