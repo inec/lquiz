@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 @Injectable()
 export class ApiService {
 
+    private selectedQuestion = new Subject<any>();
     constructor(private http: HttpClient){
 
     }

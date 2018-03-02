@@ -44,6 +44,8 @@ namespace quiz_backend.Controllers
         public async Task<IActionResult> Put(int id, [FromBody]Models.Question questionData)
         {
             //var qestion = await context.Questions.SingleOrDefaultAsync(q=>q.ID ==id);
+            if (id != questionData.ID)
+                return BadRequest();
 
             context.Entry(questionData).State = EntityState.Modified;
 
