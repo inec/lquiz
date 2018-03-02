@@ -27,6 +27,10 @@ export class ApiService {
 
     }
 
+
+    selectQuestion(question){
+         this.selectedQuestion.next(question)
+    }
     
 
 }
