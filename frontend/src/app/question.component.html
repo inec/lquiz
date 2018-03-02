@@ -1,10 +1,10 @@
 <mat-card>
 
-  <md-card-title>
+  <mat-card-title>
     <span *ngIf="question.id">Edit Question</span>
 
     <span *ngIf="!question.id">New Question</span>
-  </md-card-title>
+  </mat-card-title>
   <mat-card-content>
 
     <form>
@@ -35,7 +35,7 @@
 
   </mat-card-content>
   <mat-card-actions>
-    <button *ngIf="question.id" (click)="null" mat-button>Edit</button>
+    <button *ngIf="question.id" (click)="putQuestion(question)" mat-button>Edit</button>
     <button *ngIf="question.id" (click)="question={}" mat-button>new</button>
     <button *ngIf="!question.id" (click)="post(question)" mat-button>POST</button>
 

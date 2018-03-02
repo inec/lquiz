@@ -27,6 +27,13 @@ export class ApiService {
 
     }
 
+    putQuestion(question){
+        this.http.put(`http://localhost:52980/api/questions${question.id}`,question).subscribe(res=>{
+            console.log(res+'-api.sevice.ts l22')
+        }        )
+     
+
+    }
 
     selectQuestion(question){
          this.selectedQuestion.next(question)
