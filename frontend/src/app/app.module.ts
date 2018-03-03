@@ -9,12 +9,17 @@ import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
 
 import {FormsModule} from '@angular/forms';
+import {RouterModule} from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.components';
 import { ApiService } from './api.service';
 import { QuestionsComponent } from './questions.component';
 
+const routes=[
+  {path:'question',component:QuestionComponent},
+  {path:'questions',component:QuestionsComponent},
+]
 @NgModule({
   declarations: [
     AppComponent,QuestionComponent,QuestionsComponent
@@ -22,6 +27,7 @@ import { QuestionsComponent } from './questions.component';
   imports: [
     BrowserModule,
     HttpClientModule,
+    RouterModule.forRoot(routes),
     FormsModule,
     BrowserAnimationsModule,
     MatButtonModule,
