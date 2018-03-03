@@ -7,6 +7,7 @@ import {MatButtonModule} from '@angular/material';
 import {MatInputModule} from '@angular/material/input';
 import {MatCardModule} from '@angular/material/card';
 import {MatListModule} from '@angular/material/list';
+import {MatToolbarModule} from '@angular/material/toolbar'
 
 import {FormsModule} from '@angular/forms';
 import {RouterModule} from '@angular/router';
@@ -16,6 +17,8 @@ import { QuestionComponent } from './question.components';
 import { ApiService } from './api.service';
 import { QuestionsComponent } from './questions.component';
 import { HomeComponent } from './home.component';
+import { NavComponent } from './nav.component';
+
 
 const routes=[
   {path:'',component:HomeComponent},
@@ -35,6 +38,7 @@ const routes=[
     MatButtonModule,
     MatInputModule,
     MatCardModule,
+    MatToolbarModule,
     MatListModule
   ],
   providers: [ApiService],
