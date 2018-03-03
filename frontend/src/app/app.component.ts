@@ -3,7 +3,7 @@ import { QuestionComponent } from './question.components';
 
 @Component({
   selector: 'app-root',
-  template: '<question></question><questions></questions>'
+  template: '<router-outlet></router-outlet>'
 })
 export class AppComponent {
   title = 'inec-mapp';

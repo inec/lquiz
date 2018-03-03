@@ -15,14 +15,16 @@ import { AppComponent } from './app.component';
 import { QuestionComponent } from './question.components';
 import { ApiService } from './api.service';
 import { QuestionsComponent } from './questions.component';
+import { HomeComponent } from './home.component';
 
 const routes=[
+  {path:'home',component:HomeComponent},
   {path:'question',component:QuestionComponent},
   {path:'questions',component:QuestionsComponent},
 ]
 @NgModule({
   declarations: [
-    AppComponent,QuestionComponent,QuestionsComponent
+    AppComponent,QuestionComponent,QuestionsComponent,HomeComponent
   ],
   imports: [
     BrowserModule,
