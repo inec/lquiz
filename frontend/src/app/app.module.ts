@@ -18,7 +18,7 @@ import { QuestionsComponent } from './questions.component';
 import { HomeComponent } from './home.component';
 
 const routes=[
-  {path:'home',component:HomeComponent},
+  {path:'',component:HomeComponent},
   {path:'question',component:QuestionComponent},
   {path:'questions',component:QuestionsComponent},
 ]
