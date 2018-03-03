@@ -27,7 +27,7 @@ const routes=[
 ]
 @NgModule({
   declarations: [
-    AppComponent,QuestionComponent,QuestionsComponent,HomeComponent
+    AppComponent,QuestionComponent,QuestionsComponent,HomeComponent,NavComponent
   ],
   imports: [
     BrowserModule,
