@@ -9,7 +9,7 @@ import { ApiService } from './api.service';
 export class QuizComponent {
 
 
-    
+    quiz={}
     constructor(private api: ApiService){}
 
 
