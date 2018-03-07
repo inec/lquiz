@@ -36,8 +36,8 @@ export class ApiService {
     }
 
     postQuiz(quiz){
-        console.log(question+'-uuu')
-        this.http.post('http://localhost:52980/api/quizzes',question).subscribe(res=>{
+        console.log(quiz+'-uuu')
+        this.http.post('http://localhost:52980/api/quizzes',quiz).subscribe(res=>{
             console.log(res+'-api.sevice.ts Quiz')
         }        )
      
