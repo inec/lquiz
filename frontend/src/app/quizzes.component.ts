@@ -13,10 +13,10 @@ export class QquizzesComponent {
     constructor(private api: ApiService){}
 
     ngOnInit(){
-        // this.api.getQuestions().subscribe(res=>{
-        //     //console.log(res)
-        //     this.questions=res
-        // }        )
+        this.api.getQuizzes().subscribe(res=>{
+            //console.log(res)
+            this.quiz=res
+        }        )
     }
 
 

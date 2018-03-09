@@ -19,6 +19,10 @@ export class ApiService {
 
     }
 
+    getQuizzes(){
+        return  this.http.get('http://localhost:52980/api/quizzes')
+  
+      }
 
     postQuestion(question){
         console.log(question+'-uuu')
