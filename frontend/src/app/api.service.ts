@@ -8,6 +8,8 @@ export class ApiService {
     private selectedQuestion = new Subject<any>();
     questionSelected=this.selectedQuestion.asObservable();
 
+    private selectedQuiz= new Subject<any>();
+    quizSelected=this.selectedQuestion.asObservable();
     constructor(private http: HttpClient){
 
     }
@@ -47,5 +49,10 @@ export class ApiService {
          this.selectedQuestion.next(question)
     }
     
+    selectQuizzes(quiz){
+        this.selectedQuiz.next(quiz)
+   }
+
+
 
 }
