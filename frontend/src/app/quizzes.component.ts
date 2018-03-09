@@ -15,7 +15,7 @@ export class QuizzesComponent {
     ngOnInit(){
         this.api.getQuizzes().subscribe(res=>{
             //console.log(res)
-            this.quiz=res
+            this.quizzes=res
         }        )
     }
 
