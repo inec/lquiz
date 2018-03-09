@@ -29,7 +29,10 @@ const routes=[
 ]
 @NgModule({
   declarations: [
-    AppComponent,QuestionComponent,QuestionsComponent,HomeComponent,NavComponent, QuizComponent 
+    AppComponent,QuestionComponent,QuestionsComponent,
+    HomeComponent,NavComponent, 
+    QuizComponent ,
+    QuizzesComponent
   ],
   imports: [
     BrowserModule,
