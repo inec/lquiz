@@ -37,9 +37,8 @@ export class ApiService {
         this.http.put(`http://localhost:52980/api/questions${question.id}`,question).subscribe(res=>{
             console.log(res+'-api.sevice.ts PUT')
         }        )
-     
-
     }
+
 
     postQuiz(quiz){
         console.log(quiz+'-uuu')
@@ -48,6 +47,11 @@ export class ApiService {
         }        )
      
 
+    }
+    putQuiz(quiz){
+        this.http.put(`http://localhost:52980/api/quizzes${quiz.id}`,quiz).subscribe(res=>{
+            console.log(res+'-api.sevice.ts PUT')
+        }        )
     }
     selectQuestion(question){
          this.selectedQuestion.next(question)
