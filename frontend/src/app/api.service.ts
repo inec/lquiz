@@ -9,7 +9,7 @@ export class ApiService {
     questionSelected=this.selectedQuestion.asObservable();
 
     private selectedQuiz= new Subject<any>();
-    quizSelected=this.selectedQuestion.asObservable();
+    quizSelected=this.selectedQuiz.asObservable();
     constructor(private http: HttpClient){
 
     }
