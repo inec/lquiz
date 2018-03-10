@@ -22,7 +22,7 @@
     <button *ngIf="quiz.id" (click)="api.putQuiz(quiz)  " mat-button>Edit</button>
     <button *ngIf="quiz.id" (click)="quiz={]" mat-button>new</button>
   
-    <button *ngIf="quiz.id" routerLink="/question" mat-button>Edit Question</button>
+    <button *ngIf="quiz.id" [routerLink]=[`/question`,2] mat-button>Edit Question</button>
   
     <button *ngIf="!quiz.id" (click)="api.postQuiz(quiz)" mat-button>POST</button>
 
