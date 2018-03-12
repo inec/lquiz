@@ -10,7 +10,7 @@ import {ActivatedRoute} from '@angular/router'
 export class QuestionComponent {
 
     question={}
-    
+    quizId
     constructor(private api: ApiService, private route:ActivatedRoute){}
 
     ngOnInit(){
@@ -20,6 +20,7 @@ export class QuestionComponent {
     }
 
     post(question){
+        question.quizId=this.quizId
         this.api.postQuestion(question)
         //console.log(question)
     }
