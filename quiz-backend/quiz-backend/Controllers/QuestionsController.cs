@@ -29,6 +29,13 @@ namespace quiz_backend.Controllers
                 //{ "value1", "value2" };
         }
 
+        [HttpGet("{quizId}")]
+        public IEnumerable<Models.Question> Get([FromRoute] int quizId)
+        {
+            return context.Questions;
+
+        }
+
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Models.Question question)
         {
