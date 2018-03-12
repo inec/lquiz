@@ -14,8 +14,8 @@ export class ApiService {
 
     }
 
-    getQuestions(){
-      return  this.http.get('http://localhost:52980/api/questions')
+    getQuestions(quizId){
+      return  this.http.get(`http://localhost:52980/api/questions/${quizId}`)
 
     }
 
