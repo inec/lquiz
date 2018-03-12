@@ -32,7 +32,7 @@ namespace quiz_backend.Controllers
         [HttpGet("{quizId}")]
         public IEnumerable<Models.Question> Get([FromRoute] int quizId)
         {
-            return context.Questions;
+            return context.Questions.Where(q=> q.QuizId == quizId);
 
         }
 
