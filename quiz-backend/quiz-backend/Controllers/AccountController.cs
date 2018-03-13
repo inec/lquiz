@@ -18,7 +18,7 @@ namespace quiz_backend.Controllers
             public string Password { get; set; }
 
             [HttpPost]
-        public async Task<IActionResult> Register()
+        public async Task<IActionResult> Register([FromBody] Credentials credentials)
         {
 
         } 
