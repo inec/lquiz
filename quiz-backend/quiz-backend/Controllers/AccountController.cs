@@ -33,6 +33,7 @@ namespace quiz_backend.Controllers
                 var user = new IdentityUser { UserName = credentials.Email, Email = credentials.Email };
             var result = await userManager.CreateAsync(user, credentials.Password);
 
+            await signInManager.SignInAsync(user, isPersistent: false);
             if (!result.Succeeded)
                 return BadRequest(result.Errors);
                 var jwt = new JwtSecurityToken();
