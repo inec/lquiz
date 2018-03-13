@@ -36,7 +36,9 @@ namespace quiz_backend
 
             services.AddDbContext<QuizContext>( opt => opt.UseInMemoryDatabase("quiz"));
 
-            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<>();
+            services.AddDbContext<UserDbContext>(opt => opt.UseInMemoryDatabase("user"));
+
+            services.AddIdentity<IdentityUser, IdentityRole>().AddEntityFrameworkStores<UserDbContext>();
 
             services.AddMvc();
         }
