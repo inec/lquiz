@@ -20,16 +20,21 @@ namespace quiz_backend.Controllers
     [Route("api/Account")]
     public class AccountController : Controller
     {
-        readonly UserManager<IdentityUser> userManage;
-       public AccountController(UserManager<IdentityUser> userManager)
+        readonly UserManager<IdentityUser> userManager;
+        readonly SignInManager<IdentityUser> signInManager;
+       public AccountController(UserManager<IdentityUser> userManager,SignInManager<IdentityUser> signInManager)
         {
-            this.userManage = userManage;
+            this.userManager = userManager;
+            this.signInManager = signInManager;
         }
             [HttpPost]
         public async Task<IActionResult> Register([FromBody] Credentials credentials)
         {
                 var user = new IdentityUser { UserName = credentials.Email, Email = credentials.Email };
+            var result = await userManager.CreateAsync(user, credentials.Password);
 
+            if (!result.Succeeded)
+                return BadRequest(result.Errors);
                 var jwt = new JwtSecurityToken();
                 return Ok(new JwtSecurityTokenHandler().WriteToken(jwt));
         } 
