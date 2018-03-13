@@ -39,8 +39,10 @@ namespace quiz_backend.Controllers
         [HttpPost]
         public async Task<IActionResult> Post([FromBody]Models.Question question)
         {
-            //context.Questions.Add( new Models.Question() { Text="text1"}            );
-            var quiz = context.Quiz.SingleOrDefault(q => q.ID == question.QuizId);
+  
+            var quiz = context.Quiz.SingleOrDefault(q => q.ID == question.QuizId);          //context.Questions.Add( new Models.Question() { Text="text1"}            );
+            if (quiz == null)
+                return NotFound();
             context.Questions.Add(question);
             await context.SaveChangesAsync();
 
