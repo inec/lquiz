@@ -11,8 +11,16 @@ namespace quiz_backend.Controllers
     [Route("api/Account")]
     public class AccountController : Controller
     {
+        public class Credentials
+        {
+            public string Email { get; set; }
 
-        [HttpPost]
-        public async Task<IActionResult> Re 
+            public string Password { get; set; }
+
+            [HttpPost]
+        public async Task<IActionResult> Register()
+        {
+
+        } 
     }
 }
