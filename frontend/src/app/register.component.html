@@ -1,7 +1,7 @@
 <mat-card>
   <form [formGroup]="form" (ngSumbit)="register">
     <mat-form-field>
-          <input matInput placeholder="Email">
+          <input matInput placeholder="Email" formControlName="email">
     </mat-form-field>
 
     <mat-form-field>
