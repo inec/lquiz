@@ -18,6 +18,9 @@ export class RegisterComponent {
 
     }
 
+    register(){
+        console.log(this.form)
+    }
     ngOnInit(){
     //this.api.quizSelected.subscribe(quiz => this.quiz=quiz)
 
