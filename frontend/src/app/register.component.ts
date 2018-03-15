@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormBuilder } from '@angular/forms'
+import { FormBuilder,  Validators } from '@angular/forms'
 
 import { ApiService } from './api.service';
 
@@ -13,8 +13,8 @@ export class RegisterComponent {
     form
     constructor(private api: ApiService,private fb: FormBuilder){
         this.form= fb.group({
-            email:[''],
-            password:['']
+            email:['',Validators.required],
+            password:['',Validators.required]
         })
 
     }
