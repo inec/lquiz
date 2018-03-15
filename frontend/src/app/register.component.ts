@@ -9,8 +9,9 @@ import { ApiService } from './api.service';
     templateUrl:'./register.component.html'
 })
 export class RegisterComponent {
-    //quiz={}
-    constructor(private api: ApiService){}
+   
+    form
+    constructor(private api: ApiService,private fb: FormBuilder){}
 
     ngOnInit(){
     //this.api.quizSelected.subscribe(quiz => this.quiz=quiz)
