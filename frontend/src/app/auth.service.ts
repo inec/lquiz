@@ -11,11 +11,10 @@ export class AuthService {
     }
 
     register(credentials){
-      this.http.post<any>(`http://localhost:52980/api/account`,credentials).subscribe(res=>{
+      this.http.post<any>(`http://localhost:52980/api/account`, credentials).subscribe(res=>{
         localStorage.setItem('token',res)
       } )
-
-
+    }
 
 
 }
