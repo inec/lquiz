@@ -10,8 +10,10 @@ export class AuthService {
 
     }
 
-    register(quizId){
-      return  this.http.get(`http://localhost:52980/api/questions/${quizId}`)
+    register(credentials){
+      this.http.post(`http://localhost:52980/api/account`,credentials).subscribe(res=>{
+
+      } )
 
 
 
