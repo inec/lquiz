@@ -12,7 +12,7 @@ export class AuthInterceptor implements HttpInterceptor {
 
     intercept(req,next){
       console.log(req)
-      return next.handle(0)
+      return next.handle(req)
     }
     
 
