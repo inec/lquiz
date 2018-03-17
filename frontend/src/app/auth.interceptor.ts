@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpInterceptor } from '@angular/common/http';
 import { Subject} from 'rxjs';
 
 @Injectable()
-export class AuthService {
+export class AuthInterceptor implements HttpInterceptor {
 
  
     constructor(private http: HttpClient){
 
     }
 
-    register(credentials){
-      this.http.post<any>(`http://localhost:52980/api/account`, credentials).subscribe(res=>{
-        localStorage.setItem('token',res)
-      } )
+    intercept(req,next){
+      console.log(req)
+      return next.handle(0)
     }
+    
 
 
 }
